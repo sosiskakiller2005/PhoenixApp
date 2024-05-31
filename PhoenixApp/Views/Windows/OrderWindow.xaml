@@ -1,0 +1,33 @@
+﻿<Window x:Class="PhoenixApp.Views.Windows.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhoenixApp.Views.Windows"
+        mc:Ignorable="d"
+        Title="Окно заказов" Height="800" Width="800">
+    <Grid Background="#FF2C78BF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72*" />
+            <RowDefinition Height="573*" />
+            <RowDefinition Height="139*" />
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF1678E2" HorizontalAlignment="Center" Height="562" 
+               Margin="0,10,0,0" Grid.Row="1" 
+               StrokeThickness="6" Stroke="Black" VerticalAlignment="Top" 
+               Width="780"/>
+        <ListView FontSize="50" Name="ordersLV" SelectionChanged="ordersLV_SelectionChanged" Grid.Row="1" Margin="15,19,15,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер заказа" DisplayMemberBinding="{Binding CodeName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock FontSize="50" Foreground="White" Margin="320,5,320,8" >
+        Заказы
+        </TextBlock>
+        <Button Name="ReturnInCabinetBtn" Click="ReturnInCabinetBtn_Click" Margin="181,28,197,26" FontSize="40" Background="#FF3574F1" BorderBrush="#FF9C9644" Foreground="#FFFFFEFE" BorderThickness="4" Grid.Row="2" RenderTransformOrigin="0.5,0.5">
+            В кабинет
+        </Button>
+    </Grid>
+</Window>

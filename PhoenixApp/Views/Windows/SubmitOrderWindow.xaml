@@ -1,0 +1,73 @@
+﻿<Window x:Class="PhoenixApp.Views.Windows.SubmitOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhoenixApp.Views.Windows"
+        mc:Ignorable="d" Height="900" Width="900">
+    <Grid Background="#FF2C78BF">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*" />
+            <RowDefinition Height="99*" />
+            <RowDefinition Height="371*" />
+            <RowDefinition Height="342*" />
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF1678E2" HorizontalAlignment="Left" 
+               Height="646" Margin="10,3.8,0,0" Stroke="Black" StrokeThickness="6"
+               VerticalAlignment="Top" Width="850" Grid.RowSpan="3" Grid.Row="1"/>
+
+        <Grid Name="UserGrid" Grid.Row="2" Margin="50,0,50,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock FontSize="45" Foreground="White" Grid.ColumnSpan="2">
+        Информация о заказе
+        </TextBlock>
+            <TextBlock Grid.Row="1" FontSize="33" Foreground="White">
+       ФИО пользователя:
+        </TextBlock>
+            <TextBlock Grid.Row="2" FontSize="33" Foreground="White">
+                Телефон пользователя:
+            </TextBlock>
+            <TextBlock Grid.Row="3" FontSize="33" Foreground="White">
+                Почта пользователя:
+            </TextBlock>
+            <TextBlock Grid.Row="4" FontSize="33" Foreground="White">
+                Дата оформления:
+            </TextBlock>
+            <TextBlock Grid.Row="5" FontSize="33" Foreground="White">
+            Конечная стоимость:
+            </TextBlock>
+
+            <TextBlock Text="{Binding Name}" Grid.Row="1" Grid.Column="1" FontSize="33" Foreground="White" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Phone}" Grid.Row="2" Grid.Column="1" FontSize="33" Foreground="White"/>
+            <TextBlock Text="{Binding Email}" Grid.Row="3" Grid.Column="1" FontSize="33" Foreground="White"/>
+            <TextBlock x:Name="DateOfPlacementTbl" Grid.Row="4" Grid.Column="1" FontSize="33" Foreground="White"/>
+            <TextBlock x:Name="SumTbl" Grid.Row="5" Grid.Column="1" FontSize="33" Foreground="White"/>
+
+        </Grid>
+        <Button x:Name="CheckOurOrderBtn" 
+            Click="CheckOurOrderBtn_Click" Grid.Row ="3" 
+            Margin="10,237.4,504,10" FontSize="40" Background="#FF3574F1" 
+            BorderBrush="#FF9C9644" Foreground="#FFFFFEFE" BorderThickness="4"
+            Content="ОФОРМИТЬ"/>
+        <Button x:Name="DeclineOrderBtn" Click="DeclineOrderBtn_Click" Grid.Row ="3" 
+            Margin="506,237.4,10,10" FontSize="40" Background="#FF3574F1" 
+            BorderBrush="#FF9C9644" Foreground="#FFFFFEFE" BorderThickness="4" 
+            Content="ОТМЕНИТЬ"/>
+
+
+
+    </Grid>
+</Window>

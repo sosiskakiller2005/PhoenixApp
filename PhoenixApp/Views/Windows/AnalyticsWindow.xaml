@@ -1,0 +1,103 @@
+﻿<Window x:Class="PhoenixApp.Views.Windows.AnalyticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhoenixApp.Views.Windows"
+        mc:Ignorable="d"
+                Title="Окно аналитики" WindowStartupLocation="CenterScreen" Height="900" Width="1200">
+    <Grid Background="#FF2C78BF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="150" />
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Height="54">
+            Аналитика
+        </TextBlock>
+        <Rectangle Grid.Row="1" Fill="#FF1678E2" HorizontalAlignment="Left" Height="600" Margin="10,34,0,0" Stroke="Black" StrokeThickness="6" VerticalAlignment="Top" Width="575"/>
+        <Grid Grid.Row="1" Height="570"  Width="575" Margin="35,59,590,5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <TextBlock FontSize="35" VerticalAlignment="Center" Foreground="White" Height="62">
+            Общая аналитика
+            </TextBlock>
+            <TextBlock Grid.Row="1" FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54">
+           Всего выполнено заказов:
+            </TextBlock>
+            <TextBox Name="FinishedOrdersTB" Grid.Row="2" Height="60" Width="290" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}">
+            </TextBox>
+            <TextBlock FontSize="35" Grid.Row="3" VerticalAlignment="Center" Foreground="White" Height="54">
+           Всего просрочено заказов:
+            </TextBlock>
+            <TextBox Grid.Row="4" Height="60" Width="290" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}">
+            </TextBox>
+            <TextBlock Grid.Row="5" FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54">
+            Общее количество:
+            </TextBlock>
+            <TextBox Name="OrdersTB" Grid.Row="6" Height="60" Width="290" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}">
+            </TextBox>
+            <TextBlock Grid.Row="7" FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54">
+                В процессе выполнения:
+            </TextBlock>
+            <TextBox Name="NotFinishedOrdersTB" Grid.Row="8" Height="60" Width="290" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}">
+
+            </TextBox>
+        </Grid>
+
+        <Rectangle Grid.Row="1" Fill="#FF1678E2" HorizontalAlignment="Left" Height="600" Margin="590,34,0,0" Stroke="Black" StrokeThickness="6" VerticalAlignment="Top" Width="594"/>
+        <Grid Grid.Row="1" Height="647" Width="594" Margin="615,55,-9,82" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54" Grid.ColumnSpan="2">
+            Аналитика 
+сотрудников
+            </TextBlock>
+            <TextBlock Grid.Row="1" FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54" Grid.ColumnSpan="2">
+           Выполнил больше всего заказов:
+            </TextBlock>
+            <TextBox Name="MostOrdersTb" Grid.Row="2" Height="60" Width="400" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}" Margin="0,5,0,5">
+            </TextBox>
+            <TextBlock Grid.Row="3" FontSize="35" Foreground="White" Height="93" Grid.ColumnSpan="2" Margin="0,0,0,27" Grid.RowSpan="2">
+           Просрочил больше всего заказов:
+            </TextBlock>
+            <TextBox Grid.Row="4" Height="60" Width="400" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}" Margin="0,5,0,5">
+            </TextBox>
+            <TextBlock Grid.Row="5" FontSize="35" VerticalAlignment="Center" Foreground="White" Height="54" Grid.ColumnSpan="2">
+                Выполнил меньше всего заказов:
+            </TextBlock>
+            <TextBox Name="LeastOrdersTb" Grid.Row="6" Height="60" Width="400" HorizontalAlignment="Left" FontSize="35" Foreground="White" Background="{x:Null}" Margin="0,5,0,5">
+            </TextBox>
+        </Grid>
+
+        <Button x:Name="FromAnaliticsToCabinetBtn" Height="100" Width="500"
+                Click="FromAnaliticsToCabinetBtn_Click"
+                Grid.Row="2" FontSize="40" Background="#FF3574F1" 
+                BorderBrush="#FF9C9644" Foreground="#FFFFFEFE" BorderThickness="4"
+                Content="В КАБИНЕТ"/>
+    </Grid>
+</Window>
